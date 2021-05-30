@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div id="page-content">
+
+        <!-----------------Content-------------------->
+        <section class="box-content">
+            <div class="col-md-4">
+                <h3>Contact Info</h3>
+                <span>SED UT PERSPICIATIS UNDE OMNIS ISTE NATUS ERROR SIT VOLUPTATEM ACCUSANTIUM DOLOREMQUE LAUDANTIUM, TOTAM REM APERIAM.</span><br>
+                <br>
+                <p>JL.Kemacetan timur no.23. block.Q3<br>
+                    Jakarta-Indonesia</p>
+                <p>+6221 888 888 90 <br>
+                    +6221 888 88891</p>
+                <p>info@yourdomain.com</p>
+            </div>
+            <div class="col-md-8">
+                <h3>Contact Form</h3>
+                <form name="form1" method="post" action="contact.php">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-lg" name="name" id="name"
+                                       placeholder="Enter name" required="required"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control input-lg" name="email" id="email"
+                                       placeholder="Enter email" required="required"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-lg" name="subject" id="subject"
+                                       placeholder="Subject" required="required"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                            <textarea name="message" id="message" class="form-control" rows="4"
+                                                      cols="25" required="required" placeholder="Message"
+                                                      style="height: 170px;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-skin btn-block" name="submitcontact"
+                                    id="submitcontact">Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
