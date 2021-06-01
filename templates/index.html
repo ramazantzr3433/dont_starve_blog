@@ -26,152 +26,28 @@
         <!-- ////////////Content Box 02 -->
         <section class="box-content box-2 box-style-black">
             <div class="">
-                <div class="">
+                {% for image in images %}
                     <div class="col-lg-3 col-sm-4 col-md-6">
                         <div class="portfolio-box zoom-effect">
-                            <img src="../../static/images/ds01.jpg" class="img-responsive" alt="">
+                            <img src="{{ url_for('static', filename='images/' + image.get('image')) }}"
+                                 class="img-responsive" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-social">
                                         <ul class="list-inline">
                                             <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="../../static/images/ds01.jpg"
+                                            <li>
+                                                <a href="{{ url_for('static', filename='images/' + image.get('image')) }}"
                                                    data-lightbox="example-set"
                                                    data-title="Click the right half of the image to move forward."><i
-                                                    class="fa fa-search"></i></a></li>
+                                                        class="fa fa-search"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-4 col-md-6">
-                        <div class="portfolio-box zoom-effect">
-                            <img src="../../static/images/ds02.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-social">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="../../static/images/ds02.jpg"
-                                                   data-lightbox="example-set"
-                                                   data-title="Click the right half of the image to move forward."><i
-                                                    class="fa fa-search"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-md-6">
-                        <div class="portfolio-box zoom-effect">
-                            <img src="../../static/images/ds03.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-social">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="../../static/images/ds03.jpg"
-                                                   data-lightbox="example-set"
-                                                   data-title="Click the right half of the image to move forward."><i
-                                                    class="fa fa-search"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-md-6">
-                        <div class="portfolio-box zoom-effect">
-                            <img src="../../static/images/ds04.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-social">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="../../static/images/ds04.jpg"
-                                                   data-lightbox="example-set"
-                                                   data-title="Click the right half of the image to move forward."><i
-                                                    class="fa fa-search"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-md-6">
-                        <div class="portfolio-box zoom-effect">
-                            <img src="../../static/images/ds05.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-social">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="../../static/images/ds05.jpg"
-                                                   data-lightbox="example-set"
-                                                   data-title="Click the right half of the image to move forward."><i
-                                                    class="fa fa-search"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-md-6">
-                        <div class="portfolio-box zoom-effect">
-                            <img src="../../static/images/ds06.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-social">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="../../static/images/ds06.jpg"
-                                                   data-lightbox="example-set"
-                                                   data-title="Click the right half of the image to move forward."><i
-                                                    class="fa fa-search"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-md-6">
-                        <div class="portfolio-box zoom-effect">
-                            <img src="../../static/images/ds07.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-social">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="../../static/images/ds07.jpg"
-                                                   data-lightbox="example-set"
-                                                   data-title="Click the right half of the image to move forward."><i
-                                                    class="fa fa-search"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-md-6">
-                        <div class="portfolio-box zoom-effect">
-                            <img src="../../static/images/ds08.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-social">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="../../static/images/ds08.jpg"
-                                                   data-lightbox="example-set"
-                                                   data-title="Click the right half of the image to move forward."><i
-                                                    class="fa fa-search"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </section>
 

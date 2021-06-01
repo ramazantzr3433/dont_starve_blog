@@ -1,0 +1,68 @@
+{% extends 'admin/base.html' %}
+{% block body %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Gallery</h1>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                {#                <div class="table-responsive">#}
+                {#                    <table class="table table-bordered" id="dataTable">#}
+                {#                        <thead>#}
+                {#                        <tr>#}
+                {#                            <th>#</th>#}
+                {#                            <th>Image</th>#}
+                {#                        </tr>#}
+                {#                        </thead>#}
+                {#                        <tbody>#}
+                {##}
+                {#                        {% for image in images %}#}
+                {##}
+                {#                            <tr>#}
+                {#                                <td width="50px">{{ loop.index0 }}</td>#}
+                {#                                <td width="250px">#}
+                {#                                    <a href="{{ url_for('admin.image_activity', _id=image.get('_id')) }}"> <img#}
+                {#                                            height="100px"#}
+                {#                                            style="border: 5px solid; border-color: {% if image.get('is_active') %}#}
+                {#                                                green {% else %} red#}
+                {#                                            {% endif %}; "#}
+                {#                                            src="{{ url_for('static', filename='images/')+image.get('image') }}"#}
+                {#                                            alt=""></a>#}
+                {#                                </td>#}
+                {#                            </tr>#}
+                {##}
+                {#                        {% endfor %}#}
+                {##}
+                {#                        </tbody>#}
+                {#                    </table>#}
+                {#                </div>#}
+                <div class="d-flex flex-row flex-wrap">
+                    {% for image in images %}
+                        <div class="p-5">
+                            <a href="{{ url_for('admin.image_activity', _id=image.get('_id')) }}"> <img
+                                    height="100px"
+                                    style="border: 5px solid; border-color: {% if image.get('is_active') %}
+                                        green {% else %} red
+                                    {% endif %}; "
+                                    src="{{ url_for('static', filename='images/')+image.get('image') }}"
+                                    alt=""></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+{% endblock %}

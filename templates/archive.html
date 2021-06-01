@@ -6,71 +6,28 @@
         <div class="box-content"><!-----------Content-------------->
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <article class="archive-post"><!--Start Article-->
-                        <div class="wrap-post">
-                            <div class="entry-header">
-                                <h2 class="entry-title"><a href="single.html">LOREM IPSUM DOLOR SIT AMET
-                                    CONSETETUR SADIPSCING ELITR SED</a></h2>
+
+                    {% for blog in blogs %}
+                        <article class="archive-post"><!--Start Article-->
+                            <div class="wrap-post">
+                                <div class="entry-header">
+                                    <h2 class="entry-title"><a href="single.html">{{ blog.get('header') }}</a></h2>
+                                </div>
+                                <div class="post-thumbnail-wrap">
+                                    <a class="portfolio-box zoom-effect" href="single.html">
+                                        <img src="{{ url_for('static', filename='images/' + blog.get('image')) }}"
+                                             class="img-responsive" alt="">
+                                    </a>
+                                </div>
+                                <div class="entry-content">
+                                    <p>{{ blog.get('message') | truncate(250) }}</p>
+                                    <a class="btn btn-skin" href="{{ url_for('single_archive', _id=blog.get('_id')) }}">Read
+                                        More</a>
+                                </div>
                             </div>
-                            <div class="post-thumbnail-wrap">
-                                <a class="portfolio-box zoom-effect" href="single.html">
-                                    <img src="../../static/images/Shipwrecked.jpg" class="img-responsive"
-                                         alt="">
-                                </a>
-                            </div>
-                            <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore et
-                                    magna aliquyam...</p>
-                                <a class="btn btn-skin" href="single.html">Read More</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="archive-post"><!--Start Article-->
-                        <div class="wrap-post">
-                            <div class="entry-header">
-                                <h2 class="entry-title"><a href="single.html">LOREM IPSUM DOLOR SIT AMET
-                                    CONSETETUR SADIPSCING ELITR SED</a></h2>
-                            </div>
-                            <div class="post-thumbnail-wrap">
-                                <a class="portfolio-box zoom-effect" href="single.html">
-                                    <img src="../../static/images/Giants.jpg" class="img-responsive" alt="">
-                                </a>
-                            </div>
-                            <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore et
-                                    magna aliquyam...</p>
-                                <a class="btn btn-skin" href="single.html">Read More</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="archive-post"><!--Start Article-->
-                        <div class="wrap-post">
-                            <div class="entry-header">
-                                <h2 class="entry-title"><a href="single.html">LOREM IPSUM DOLOR SIT AMET
-                                    CONSETETUR SADIPSCING ELITR SED</a></h2>
-                            </div>
-                            <div class="post-thumbnail-wrap">
-                                <a class="portfolio-box zoom-effect" href="single.html">
-                                    <img src="../../static/images/Together.jpg" class="img-responsive"
-                                         alt="">
-                                </a>
-                            </div>
-                            <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore et
-                                    magna aliquyam...</p>
-                                <a class="btn btn-skin" href="single.html">Read More</a>
-                            </div>
-                        </div>
-                    </article>
+                        </article>
+                    {% endfor %}
+
                 </div>
             </div>
         </div>
