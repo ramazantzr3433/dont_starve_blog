@@ -82,11 +82,11 @@ def blogs():
 @admin.route('/blog/<_id>/', methods=['GET', 'POST'])
 @login_required
 def blog(_id):
+    blog = None
     try:
         blog = current_user.get_blog(_id)
     except Exception as e:
-        blog = None
-        print('new blog')
+        print('new blog', e)
     if request.method == 'POST':
         posted_blog = {
             'header': request.form.get('header'),
