@@ -55,6 +55,21 @@ class User(UserMixin):
     def get_gallerys(self):
         return self.db.gallery.find()
 
+    def get_blogs(self):
+        return self.db.blog.find()
+
+    def get_blog(self, _id):
+        return self.db.blog.find_one({'_id': ObjectId(_id)})
+
+    def remove_blog(self, _id):
+        self.db.blog.remove({'_id': ObjectId(_id)})
+
+    def update_blog(self, _id, posted_blog):
+        return self.db.blog.update({'_id': ObjectId(_id)}, {'$set': posted_blog})
+
+    def new_blog(self, posted_blog):
+        self.db.blog.insert(posted_blog)
+
     def read_contact(self, _id):
         self.db.contact.update({'_id': ObjectId(_id)}, {
             '$set': {
@@ -67,6 +82,14 @@ class User(UserMixin):
         self.db.gallery.update({'_id': ObjectId(_id)}, {
             '$set': {
                 'is_active': not image.get('is_active')
+            }
+        })
+
+    def blog_activity(self, _id):
+        blog = self.db.blog.find_one({'_id': ObjectId(_id)})
+        self.db.blog.update({'_id': ObjectId(_id)}, {
+            '$set': {
+                'is_active': not blog.get('is_active')
             }
         })
 

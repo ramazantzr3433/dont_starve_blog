@@ -1,0 +1,65 @@
+{% extends 'admin/base.html' %}
+{% block body %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Blogs</h1>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="float-right my-3"><a class="btn btn-outline-info"
+                                                 href="{{ url_for('admin.blog', _id='new_blog') }}">New Blog</a></div>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Image</th>
+                            <th>Header</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                            <th>*</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for blog in blogs %}
+                            <tr>
+                                <td>{{ loop.index0 + 1 }}</td>
+                                <td>
+                                    <img src="{{ url_for('static', filename='images/'+blog.get('image')) }}"
+                                         height="35px" alt="">
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('admin.blog', _id=blog.get('_id')) }}">{{ blog.get('header') }}</a>
+                                </td>
+                                <td>{{ blog.get('message') | truncate(50) }}</td>
+                                <td>{{ blog.get('_created_at').strftime('%d/%m/%Y, %H:%M') }}</td>
+                                <td>
+                                    <a href="{{ url_for('admin.blog_activity', _id=blog.get('_id')) }}"><i
+                                            class="fa {% if blog.get('is_active') %}fa-eye{% else %}fa-eye-slash{% endif %}"></i></a>
+                                    /
+                                    <a href="{{ url_for('admin.blog', _id=blog.get('_id')) }}"><i class="fa fa-pen"></i></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+{% endblock %}

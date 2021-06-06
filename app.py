@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 
 from bson import ObjectId
@@ -13,6 +14,11 @@ app = Flask(__name__)
 client = MongoClient()
 app.db = client.blog
 app.secret_key = 'th1s1s5ec4etk3y'
+
+UPLOAD_FOLDER = os.getcwd() + '/static/images/'
+print('UPLOAD FOLDER ', UPLOAD_FOLDER)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app.register_blueprint(admin, url_prefix="/admin")
 
