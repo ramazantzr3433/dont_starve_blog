@@ -36,6 +36,9 @@
                                 <td>{% if contact.get('is_active') %}
                                     <a href="{{ url_for('admin.contact_read', _id=contact.get('_id')) }}"><i
                                             class="fa fa-eye text-info"></i></a>
+                                {% else %}
+                                    <a href="#" class="disabled text-muted"><i
+                                            class="fa fa-eye-slash text-muted"></i></a>
                                 {% endif %} </td>
                             </tr>
                         {% endfor %}
