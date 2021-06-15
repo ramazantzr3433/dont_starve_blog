@@ -16,6 +16,9 @@ app.db = client.blog
 app.secret_key = 'th1s1s5ec4etk3y'
 
 UPLOAD_FOLDER = os.getcwd() + '/static/images/'
+if not os.path.isdir(UPLOAD_FOLDER):
+    os.mkdir(UPLOAD_FOLDER)
+
 print('UPLOAD FOLDER ', UPLOAD_FOLDER)
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 

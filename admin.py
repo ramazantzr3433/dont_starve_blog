@@ -111,8 +111,9 @@ def blog(_id):
         f = request.files['image']
         if f is not None:
             file_name = secure_filename(f.filename)
-            f.save(os.path.join(app.UPLOAD_FOLDER, file_name))
-            posted_blog['image'] = file_name
+            if file_name != '':
+                f.save(os.path.join(app.UPLOAD_FOLDER, file_name))
+                posted_blog['image'] = file_name
         if blog is not None:
             current_user.update_blog(_id, posted_blog)
         else:
